@@ -1,0 +1,6 @@
+# === Backend (Node/Express) ===
+server/node_modules/
+server/.env
+server/.env.production
+server/logs/           # Fichiers de logs locaux
+server/uploads/        # Fichiers uploadés en développement
