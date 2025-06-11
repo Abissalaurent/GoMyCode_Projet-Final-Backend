@@ -11,7 +11,18 @@ const rateLimit = require("express-rate-limit");
 const app = express();
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: "https://task-management-frontend-five-topaz.vercel.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOptions));
+
+// (Important) Réponse explicite aux requêtes OPTIONS (préflight)
+app.options("*", cors(corsOptions));
+// Middleware pour parser le JSON
 app.use(express.json());
 
 
