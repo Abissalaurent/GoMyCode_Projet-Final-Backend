@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.7.2"
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "dotenv": "^16.5.0"
   }
 }
