@@ -11,7 +11,7 @@ const app = express();
 
 // ✅ Configuration CORS robuste (autorise aussi localhost pour le dev)
 const allowedOrigins = [
-  "https://task-management-frontend-five-topaz.vercel.app",
+  "https://task-management-frontend-five-topaz.vercel.app/",
 ];
 const corsOptions = {
   origin: function (origin, callback) {
