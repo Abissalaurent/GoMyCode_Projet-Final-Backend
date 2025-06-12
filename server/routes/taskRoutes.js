@@ -11,6 +11,6 @@ router.post("/", taskController.createTask);
 router.get("/", taskController.getTasks);
 router.put("/:id", taskController.updateTask);
 router.delete("/:id", taskController.deleteTask);
-router.put("/:id/status", auth, taskController.updateStatus);
+router.put("/:id/status", taskController.updateStatus);
 
 module.exports = router;
