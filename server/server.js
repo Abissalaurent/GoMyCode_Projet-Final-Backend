@@ -13,6 +13,7 @@ const app = express();
 const allowedOrigins = [
   "https://task-management-frontend-five-topaz.vercel.app",
   "https://task-management-frontend-nhsfg958y-laurentabissas-projects.vercel.app",
+  "https://task-management-frontend-git-main-laurentabissas-projects.vercel.app",
 ];
 const corsOptions = {
   origin: function (origin, callback) {
