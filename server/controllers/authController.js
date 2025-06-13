@@ -25,16 +25,18 @@ exports.register = async (req, res) => {
       expiresIn: "1h",
     });
 
-    res
-      .status(201)
-      .json({
-        token,
-        user: {id: user._id, username: user.username, email: user.email},
-      });
-    } catch (err) {
-      console.error("Erreur register:", err); // Ajoute ce log
-      res.status(500).json({ message: "Erreur serveur", error: err.message });
-    }
+    res.status(201).json({
+      token,
+      user: {id: user._id, username: user.username, email: user.email},
+    });
+  } catch (err) {
+    console.error("Erreur register:", err); // Log complet côté serveur
+    res.status(500).json({
+      message: "Erreur serveur",
+      error: err.message,
+      stack: err.stack,
+    });
+  }
 };
 
 // Connexion
@@ -64,7 +66,6 @@ exports.login = async (req, res) => {
       user: {id: user._id, username: user.username, email: user.email},
     });
   } catch (err) {
-    console.error("Erreur register:", err); // Ajoute ce log
-    res.status(500).json({ message: "Erreur serveur", error: err.message });
+    res.status(500).json({message: "Erreur serveur"});
   }
 };
