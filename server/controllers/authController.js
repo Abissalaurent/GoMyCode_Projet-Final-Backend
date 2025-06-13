@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 
 // Inscription
 exports.register = async (req, res) => {
+  console.log("Register body:", req.body);
   try {
     const {username, email, password} = req.body;
 
