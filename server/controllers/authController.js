@@ -31,9 +31,10 @@ exports.register = async (req, res) => {
         token,
         user: {id: user._id, username: user.username, email: user.email},
       });
-  } catch (err) {
-    res.status(500).json({message: "Erreur serveur"});
-  }
+    } catch (err) {
+      console.error("Erreur register:", err); // Ajoute ce log
+      res.status(500).json({ message: "Erreur serveur", error: err.message });
+    }
 };
 
 // Connexion
@@ -63,6 +64,7 @@ exports.login = async (req, res) => {
       user: {id: user._id, username: user.username, email: user.email},
     });
   } catch (err) {
-    res.status(500).json({message: "Erreur serveur"});
+    console.error("Erreur register:", err); // Ajoute ce log
+    res.status(500).json({ message: "Erreur serveur", error: err.message });
   }
 };
